@@ -1,4 +1,5 @@
-# 🛡 UFW Firewall Configuration & Security Hardening Project 
+# Internship Project
+# Task 4 - UFW Firewall Configuration & Security Hardening Project 
 
 # 📌 Introduction
 This repository documents the setup, configuration, and testing of the UFW (Uncomplicated Firewall) on a Kali Linux system. The objective was to establish a robust baseline firewall configuration, block insecure services, and validate security controls against real-world attack vectors using network scanning tools.
