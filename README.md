@@ -11,9 +11,10 @@ UFW acts as a user-friendly interface to iptables, making firewall rule manageme
 sudo apt update && sudo apt install ufw 
 
 
+## 2️⃣ Enabling Firewall Logging
+
 sudo systemctl enable ufw
 
-## 2️⃣ Enabling Firewall Logging
 
 sudo ufw enable
 
