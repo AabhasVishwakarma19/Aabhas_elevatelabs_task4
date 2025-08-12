@@ -1,0 +1,101 @@
+──(root㉿KALI)-[/home/aabhas]
+└─# sudo apt install ufw
+ufw is already the newest version (0.36.2-9).
+The following packages were automatically installed and are no longer required:
+  gir1.2-nm-1.0  python3-packaging-whl  python3-pyinstaller-hooks-contrib  python3-wheel-whl
+Use 'sudo apt autoremove' to remove them.
+
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 268
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# systemctl enable ufw
+Synchronizing state of ufw.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable ufw
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw enable
+Firewall is active and enabled on system startup
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw status numbered
+Status: active
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw deny 23        
+Rule added
+Rule added (v6)
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw deny 80
+Rule added
+Rule added (v6)
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw allow 22
+Rule added
+Rule added (v6)
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw status numbered
+Status: active
+
+     To                         Action      From
+     --                         ------      ----
+[ 1] 23                         DENY IN     Anywhere                  
+[ 2] 80                         DENY IN     Anywhere                  
+[ 3] 22                         ALLOW IN    Anywhere                  
+[ 4] 23 (v6)                    DENY IN     Anywhere (v6)             
+[ 5] 80 (v6)                    DENY IN     Anywhere (v6)             
+[ 6] 22 (v6)                    ALLOW IN    Anywhere (v6)             
+
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# nmap -p 23 10.0.2.17
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-12 12:28 IST
+Nmap scan report for 10.0.2.17
+Host is up.
+
+PORT   STATE    SERVICE
+23/tcp filtered telnet
+
+Nmap done: 1 IP address (1 host up) scanned in 15.19 seconds
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw delete deny 23 
+Rule deleted
+Rule deleted (v6)
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw delete deny 80
+Rule deleted
+Rule deleted (v6)
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw delete allow 22
+Rule deleted
+Rule deleted (v6)
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw reset          
+Resetting all rules to installed defaults. Proceed with operation (y|n)? y
+Backing up 'user.rules' to '/etc/ufw/user.rules.20250812_122952'
+Backing up 'before.rules' to '/etc/ufw/before.rules.20250812_122952'
+Backing up 'after.rules' to '/etc/ufw/after.rules.20250812_122952'
+Backing up 'user6.rules' to '/etc/ufw/user6.rules.20250812_122952'
+Backing up 'before6.rules' to '/etc/ufw/before6.rules.20250812_122952'
+Backing up 'after6.rules' to '/etc/ufw/after6.rules.20250812_122952'
+
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw status         
+Status: inactive
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw enable
+Firewall is active and enabled on system startup
+                                                                                                                                                             
+┌──(root㉿KALI)-[/home/aabhas]
+└─# ufw status
+Status: active
+                                                                                                                                                             
