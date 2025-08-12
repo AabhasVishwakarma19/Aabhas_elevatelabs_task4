@@ -38,6 +38,8 @@ sudo ufw allow 22
 ## 6️⃣ Testing Firewall Rules
 
 nmap -p 23 10.0.2.17
+
+
 Confirms that Telnet is blocked .
 
 # Result 
