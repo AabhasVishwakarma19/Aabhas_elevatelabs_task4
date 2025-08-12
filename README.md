@@ -8,7 +8,9 @@ UFW acts as a user-friendly interface to iptables, making firewall rule manageme
 # 🔍 Technical Workflow
 ## 1️⃣ Installing & Enabling UFW
 
-sudo apt update && sudo apt install ufw
+sudo apt update && sudo apt install ufw 
+
+
 sudo systemctl enable ufw
 
 ## 2️⃣ Enabling Firewall Logging
@@ -18,6 +20,8 @@ sudo ufw enable
 ## 3️⃣ Setting Default Policies
 
 sudo ufw default deny incoming
+
+
 sudo ufw default allow outgoing
 
 
