@@ -6,49 +6,37 @@ This repository documents the setup, configuration, and testing of the UFW (Unco
 UFW acts as a user-friendly interface to iptables, making firewall rule management simpler while still leveraging the full power of Linux's netfilter framework.
 
 # 🔍 Technical Workflow
-1️⃣ Installing & Enabling UFW
-bash
-Copy
-Edit
+## 1️⃣ Installing & Enabling UFW
+
 sudo apt update && sudo apt install ufw
 sudo systemctl enable ufw
 
-2️⃣ Enabling Firewall Logging
-bash
-Copy
-Edit
+## 2️⃣ Enabling Firewall Logging
+
 sudo ufw enable
 
-3️⃣ Setting Default Policies
-bash
-Copy
-Edit
+## 3️⃣ Setting Default Policies
+
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 
-4️⃣ Blocking Insecure Telnet (Port 23)
-bash
-Copy
-Edit
+## 4️⃣ Blocking Insecure Telnet (Port 23)
+
 sudo ufw deny 23
 
 
-5️⃣ Allowing SSH Access (Port 22)
-bash
-Copy
-Edit
+## 5️⃣ Allowing SSH Access (Port 22)
+
 sudo ufw allow 22
 
-6️⃣ Testing Firewall Rules
-bash
-Copy
-Edit
+## 6️⃣ Testing Firewall Rules
 
 nmap -p 23 10.0.2.17
 Confirms that Telnet is blocked .
 
 # Result 
+<img width="1920" height="936" alt="Image" src="https://github.com/user-attachments/assets/f7bf6bce-7e68-4f33-81aa-8fc73f94d06d" />
 
 
 # 📊 Key Outcomes
